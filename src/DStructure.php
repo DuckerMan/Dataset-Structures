@@ -34,7 +34,7 @@ class Dataset
         self::open ($file);
         self::setEncryptionKey ("DatasetStructuresBasicKey");
 
-        $this->useEncryption = (bool) $useEncryption;
+        $this->useEncryption = (bool) ($useEncryption);
     }
 
     function open ($file) // Открытие файла структуры
@@ -107,7 +107,7 @@ class Dataset
         if ($asIs == false)
             $id = sha1 ($id);
 
-        return (isset ($this->structure[$id]) && $this->structure[$id]) ? true : false;
+        return (isset ($this->structure[$id]) && $this->structure[$id]);
     }
 
     function save ($save = null) // Сохранение структуры
