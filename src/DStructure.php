@@ -34,7 +34,7 @@ class Dataset
         self::open ($file);
         self::setEncryptionKey ("DatasetStructuresBasicKey");
 
-        $this->useEncryption = (bool) $useEncryption;
+        $this->useEncryption = boolval($useEncryption);
     }
 
     function open ($file) // Открытие файла структуры
